@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinterest</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <script src="./index.js"></script>
+</head>
+<body>
+    <div class="nav-bar">
+        <img class="logo" src="assets/pinterest-social-media.svg " alt="">
+
+        <div class="tabs">
+            <a class="home-tab" href="">Home</a>
+            <a class="explore-tab" href="">Explore</a>
+            <a class="create-tab" href="">Create</a>
+        </div>
+
+        <div class="search-bar">
+            <img class="search-icon" src="assets/search.svg" alt="">
+            <input onkeydown="searchImages(event)" class="search-space" type="text" placeholder="Search">
+        </div>
+
+        <div class="menu">
+            <img src="assets/notification-bell.svg" alt="">
+            <img src="assets/message-circle.svg" alt="">
+            <img src="assets/avatar.svg" alt="" class="pfp">
+            <img src="assets/down-arrow.svg" alt="">
+        </div>
+    </div>
+
+    <div class="content-images"></div>
+
+    <img src="assets/question-mark.svg" alt="" class="faq">
+</body>
+</html>
