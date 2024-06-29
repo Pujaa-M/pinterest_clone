@@ -42,7 +42,7 @@ jobs:
         env:
           PEXELS_AUTHORIZATION: ${{ secrets.PEXELS_AUTHORIZATION }}
         run: |
-          sed -i 's/PEXELS_API_KEY/'"$PEXELS_AUTHORIZATION"'/g' public/config.js
+          sed -i 's/PEXELS_API_KEY/'"$PEXELS_AUTHORIZATION"'/g' index.js
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
