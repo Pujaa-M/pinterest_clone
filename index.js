@@ -5,7 +5,7 @@ getImages = (url) => {
     fetch(url, {
         method: 'GET',
         headers: {
-            Authorization: 'YOUR_API_KEY'
+            Authorization: 'PEXELS_API_KEY'
         }
     }).then(response => {
         if (!response.ok) {
