@@ -41,6 +41,10 @@ jobs:
       - name: Build project
         run: |
           sed -i 's/PEXELS_API_KEY/${{ secrets.PEXELS_AUTHORIZATION }}/g' index.js
+      - name: Verify Replacement
+        run: |
+          echo "Content of index.js after replacement:"
+          cat index.js
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
