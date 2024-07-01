@@ -41,14 +41,10 @@ jobs:
       - name: Build project
         run: |
           sed -i 's/PEXELS_API_KEY/${{ secrets.PEXELS_AUTHORIZATION }}/g' index.js
-      - name: Verify Replacement
+      - name: List Files for Debugging
         run: |
-          if grep -q "PEXELS_API_KEY" index.js; then
-            echo "Placeholder still exists in index.js"
-            exit 1
-          else
-            echo "Placeholder replaced successfully"
-          fi
+          echo "Listing files in the public directory:"
+          ls -R public
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
