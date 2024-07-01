@@ -41,10 +41,13 @@ jobs:
       - name: Build project
         run: |
           sed -i 's/PEXELS_API_KEY/${{ secrets.PEXELS_AUTHORIZATION }}/g' index.js
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
       - name: List Files for Debugging
         run: |
           echo "Listing files in the public directory:"
           ls
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Verifying placeholder
+        run: |
+          cat index.js
