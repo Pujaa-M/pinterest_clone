@@ -43,8 +43,12 @@ jobs:
           sed -i 's/PEXELS_API_KEY/${{ secrets.PEXELS_AUTHORIZATION }}/g' index.js
       - name: Verify Replacement
         run: |
-          echo "Content of index.js after replacement:"
-          cat index.js
+          if grep -q "PEXELS_API_KEY" index.js; then
+            echo "Placeholder still exists in index.js"
+            exit 1
+          else
+            echo "Placeholder replaced successfully"
+          fi
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
