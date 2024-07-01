@@ -44,7 +44,7 @@ jobs:
       - name: List Files for Debugging
         run: |
           echo "Listing files in the public directory:"
-          ls -R public
+          ls
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
